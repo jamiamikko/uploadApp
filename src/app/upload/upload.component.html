@@ -1,0 +1,18 @@
+<h3>Upload</h3>
+<form #uploadForm="ngForm" (ngSubmit)="upload(uploadForm.value, $event)">
+  <p>
+    <label>File:</label>
+    <input type="file" name="file" ngModel>
+  </p>
+  <p>
+    <label>Title:</label>
+    <input type="text" name="title" ngModel required>
+  </p>
+  <p>
+    <label>Description:</label>
+    <input type="text" name="description" ngModel>
+  </p>
+  <p>
+    <button type="submit" [disabled]="!uploadForm.valid">Submit</button>
+  </p>
+</form>
