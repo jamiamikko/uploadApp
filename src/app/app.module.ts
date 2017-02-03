@@ -14,6 +14,7 @@ import {RouterModule} from "@angular/router";
 import {MediaService} from "./services/media.service";
 import {LoginService} from "./services/login.service";
 import { UploadComponent } from './upload/upload.component';
+import { ThumbnailPipe } from './pipes/thumbnail.pipe';
 
 const routeConfig = [
   {
@@ -52,7 +53,8 @@ const routeConfig = [
     RegisterComponent,
     LoginComponent,
     LogoutComponent,
-    UploadComponent
+    UploadComponent,
+    ThumbnailPipe
   ],
   imports: [
     BrowserModule,

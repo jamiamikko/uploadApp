@@ -1,5 +1,5 @@
-import {Injectable} from '@angular/core';
-import {Http} from "@angular/http";
+import { Injectable } from '@angular/core';
+import { Http } from "@angular/http";
 import 'rxjs/add/operator/map';
 
 @Injectable()
@@ -13,8 +13,16 @@ export class MediaService {
   getMedia = () => {
     return this.http.get(this.url + '/media')
       .map(
-        res =>
-          res.json()
+      res =>
+        res.json()
+      );
+  }
+
+  getNew = () => {
+    return this.http.get(this.url + '/media?limit=10')
+      .map(
+      res =>
+        res.json()
       );
   }
 

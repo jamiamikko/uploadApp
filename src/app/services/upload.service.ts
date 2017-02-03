@@ -22,7 +22,6 @@ export class UploadService {
     this.title = value.title;
     this.description = value.description;
 
-    
     this.formData.append('file', this.file);
     this.formData.append('title', this.title);
 
@@ -43,7 +42,7 @@ export class UploadService {
       .subscribe(
         resp => {
           const dataFromServer = resp.json();
-          
+
           console.log(dataFromServer);
         },
         error => {

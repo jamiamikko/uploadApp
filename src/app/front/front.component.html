@@ -1,6 +1,9 @@
 <h3>Front</h3>
-<ul>
+<!--<ul>
   <li *ngFor="let image of images">
-    <img [src]="'http://media.mw.metropolia.fi/wbma/uploads/'+image.filename">
+    <img [src]="'http://media.mw.metropolia.fi/wbma/uploads/'+image.filename" style="max-width: 300px;">
   </li>
-</ul>
+</ul>-->
+<div *ngFor="let file of mediaFiles">
+  <img [alt]="file.title" [src]="'http://media.mw.metropolia.fi/wbma/uploads/' + (file.filename | thumbnail: 'small')">
+</div>

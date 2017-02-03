@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {LoginService} from "../services/login.service";
-import {Router} from "@angular/router";
-import {MediaService} from "../services/media.service";
+import { LoginService } from "../services/login.service";
+import { Router } from "@angular/router";
+import { MediaService } from "../services/media.service";
 
 @Component({
   selector: 'app-front',
@@ -11,16 +11,24 @@ import {MediaService} from "../services/media.service";
 export class FrontComponent implements OnInit {
 
   private images: any = [];
+  private mediaFiles: any = [];
+
 
   constructor(private loginService: LoginService, private router: Router, private mediaService: MediaService) { }
 
   ngOnInit() {
-    if(!this.loginService.logged)
+    if (!this.loginService.logged)
       this.router.navigate(['login']);
 
     this.mediaService.getMedia().subscribe(
       res => {
         this.images = res;
+      }
+    );
+
+    this.mediaService.getNew().subscribe(
+      res => {
+        this.mediaFiles = res;
       }
     );
   }
