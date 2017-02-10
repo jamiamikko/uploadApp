@@ -55,9 +55,9 @@ export class MediaPlayerComponent implements OnInit {
       res => {
         this.favourites = res.length;
 
-        for (var key in res) {
-          var obj = res[key];
-          for (var prop in obj) {
+        for (const key in res) {
+          const obj = res[key];
+          for (const prop in obj) {
 
             if (prop === 'user_id') {
 
