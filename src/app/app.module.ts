@@ -15,6 +15,7 @@ import {MediaService} from "./services/media.service";
 import {LoginService} from "./services/login.service";
 import { UploadComponent } from './upload/upload.component';
 import { ThumbnailPipe } from './pipes/thumbnail.pipe';
+import { MediaPlayerComponent } from './media-player/media-player.component';
 
 const routeConfig = [
   {
@@ -37,11 +38,14 @@ const routeConfig = [
   {
     path: 'front',
     component: FrontComponent
-  }
-  ,
+  },
   {
     path: 'upload',
     component: UploadComponent
+  },
+  {
+    path: 'mediaPlayer/:id',
+    component: MediaPlayerComponent
   }
 ];
 
@@ -54,7 +58,8 @@ const routeConfig = [
     LoginComponent,
     LogoutComponent,
     UploadComponent,
-    ThumbnailPipe
+    ThumbnailPipe,
+    MediaPlayerComponent
   ],
   imports: [
     BrowserModule,

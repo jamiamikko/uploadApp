@@ -1,0 +1,37 @@
+<p>
+  <a [routerLink]="'/front'">Back</a>
+</p>
+<div *ngIf="singleFile.media_type === 'image'">
+  <img [alt]="singleFile.title" [src]="'http://media.mw.metropolia.fi/wbma/uploads/' + singleFile.filename">
+  <p>Title: {{singleFile.title}}</p>
+  <p>Description: {{singleFile.description}}</p>
+  <p>User: {{this.userName}}</p>
+  <p>Likes: {{this.favourites}}</p>
+  <button *ngIf="!this.thisPostLiked" (click)="addFavourite(singleFile.file_id)">Like</button>
+  <button *ngIf="this.thisPostLiked" (click)="deleteFavourite(singleFile.file_id)">Unlike</button>
+</div>
+
+<div *ngIf="singleFile.media_type === 'audio'">
+  <audio controls>
+    <source [src]="'http://media.mw.metropolia.fi/wbma/uploads/' + singleFile.filename" [type]="singleFile.mime_type"> Your browser does not support the audio tag.
+  </audio>
+  <p>Title: {{singleFile.title}}</p>
+  <p>Description: {{singleFile.description}}</p>
+  <p>User: {{this.userName}}</p>
+  <p>Likes: {{this.favourites}}</p>
+  <button *ngIf="!this.thisPostLiked" (click)="addFavourite(singleFile.file_id)">Like</button>
+  <button *ngIf="this.thisPostLiked" (click)="deleteFavourite(singleFile.file_id)">Unlike</button>
+
+</div>
+
+<div *ngIf="singleFile.media_type === 'video'">
+  <video width="320" height="240" controls>
+    <source [src]="'http://media.mw.metropolia.fi/wbma/uploads/' + singleFile.filename" [type]="singleFile.mime_type"> Your browser does not support the video tag.
+  </video>
+  <p>Title: {{singleFile.title}}</p>
+  <p>Description: {{singleFile.description}}</p>
+  <p>User: {{this.userName}}</p>
+  <p>Likes: {{this.favourites}}</p>
+  <button *ngIf="!this.thisPostLiked" (click)="addFavourite(singleFile.file_id)">Like</button>
+  <button *ngIf="this.thisPostLiked" (click)="deleteFavourite(singleFile.file_id)">Unlike</button>
+</div>

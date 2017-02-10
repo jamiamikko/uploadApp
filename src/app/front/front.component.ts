@@ -3,6 +3,7 @@ import { LoginService } from "../services/login.service";
 import { Router } from "@angular/router";
 import { MediaService } from "../services/media.service";
 
+
 @Component({
   selector: 'app-front',
   templateUrl: './front.component.html',
